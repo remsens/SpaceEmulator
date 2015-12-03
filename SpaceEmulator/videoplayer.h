@@ -18,6 +18,7 @@ public:
     ~VideoPlayer();
 
 public slots:
+    void openFileSource(QString fileName);
     void openFile();
     void play();
 

@@ -23,4 +23,5 @@ HEADERS  += SpaceEmulator.h \
 FORMS    += spaceemulator.ui
 
 RESOURCES += \
-    logo.qrc
+    logo.qrc \
+    video.qrc

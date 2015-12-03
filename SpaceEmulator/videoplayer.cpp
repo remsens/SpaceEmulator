@@ -51,6 +51,7 @@ VideoPlayer::VideoPlayer(QWidget *parent)
     connect(&mediaPlayer, SIGNAL(positionChanged(qint64)), this, SLOT(positionChanged(qint64)));
     connect(&mediaPlayer, SIGNAL(durationChanged(qint64)), this, SLOT(durationChanged(qint64)));
     connect(&mediaPlayer, SIGNAL(error(QMediaPlayer::Error)), this, SLOT(handleError()));
+
 }
 
 VideoPlayer::~VideoPlayer()
@@ -62,6 +63,15 @@ void VideoPlayer::openFile()
     errorLabel->setText("");
 
     QString fileName = QFileDialog::getOpenFileName(this, tr("Open Movie"),QDir::homePath());
+
+    if (!fileName.isEmpty()) {
+        mediaPlayer.setMedia(QUrl::fromLocalFile(fileName));
+        playButton->setEnabled(true);
+    }
+}
+void VideoPlayer::openFileSource(QString fileName)
+{
+    errorLabel->setText("");
 
     if (!fileName.isEmpty()) {
         mediaPlayer.setMedia(QUrl::fromLocalFile(fileName));
