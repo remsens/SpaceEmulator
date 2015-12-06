@@ -2,5 +2,6 @@
     <qresource prefix="/pics">
         <file>Logo/NIIPFP.png</file>
         <file>Logo/VSS-logo.png</file>
+        <file>Logo/niiPFPlogo.png</file>
     </qresource>
 </RCC>

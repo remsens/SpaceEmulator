@@ -2,6 +2,7 @@
 #define SPACEEMULATOR_H
 
 #include <QMainWindow>
+#include <QtWidgets>
 #include"videoplayer.h"
 namespace Ui {
 class SpaceEmulator;
@@ -14,6 +15,9 @@ class SpaceEmulator : public QMainWindow
 public:
     explicit SpaceEmulator(QWidget *parent = 0);
     ~SpaceEmulator();
+protected:
+    void keyPressEvent(QKeyEvent *e)Q_DECL_OVERRIDE;
+    //bool eventFilter(QObject *obj, QEvent *event);
 private slots:
     void onButtonFss();
     void onButtonGoogle();

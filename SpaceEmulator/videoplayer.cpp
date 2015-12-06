@@ -32,6 +32,7 @@ VideoPlayer::VideoPlayer(QWidget *parent)
     errorLabel = new QLabel;
     errorLabel->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Maximum);
 
+
     QBoxLayout *controlLayout = new QHBoxLayout;
     controlLayout->setMargin(0);
     controlLayout->addWidget(openButton);
