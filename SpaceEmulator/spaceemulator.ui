@@ -429,7 +429,11 @@
    <enum>Qt::StrongFocus</enum>
   </property>
   <property name="windowTitle">
-   <string>SpaceEmulator</string>
+   <string>Эмулятор космического эксперимента</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="logo.qrc">
+    <normaloff>:/pics/Logo/NIIPFP.png</normaloff>:/pics/Logo/NIIPFP.png</iconset>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout" stretch="10,1">

@@ -13,7 +13,7 @@ VideoPlayer::VideoPlayer(QWidget *parent)
 {
     QVideoWidget *videoWidget = new QVideoWidget;
 
-    QAbstractButton *openButton = new QPushButton(tr("Open..."));
+    QAbstractButton *openButton = new QPushButton(tr("..."));
     connect(openButton, SIGNAL(clicked()), this, SLOT(openFile()));
 
     playButton = new QPushButton;
