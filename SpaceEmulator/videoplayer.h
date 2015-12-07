@@ -28,11 +28,13 @@ private slots:
     void durationChanged(qint64 duration);
     void setPosition(int position);
     void handleError();
+    void setSpeed(int val);
 
 private:
     QMediaPlayer mediaPlayer;
     QAbstractButton *playButton;
     QSlider *positionSlider;
+    QSlider *SpeedSlider;
     QLabel *errorLabel;
 };
 

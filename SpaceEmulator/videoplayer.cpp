@@ -32,12 +32,18 @@ VideoPlayer::VideoPlayer(QWidget *parent)
     errorLabel = new QLabel;
     errorLabel->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Maximum);
 
+    SpeedSlider = new QSlider(Qt::Vertical);
+    SpeedSlider->setRange(-300, 300);
+    SpeedSlider->setFixedSize(20,50);
+    connect(SpeedSlider, SIGNAL(valueChanged(int)),
+            this, SLOT(setSpeed(int)));
 
     QBoxLayout *controlLayout = new QHBoxLayout;
     controlLayout->setMargin(0);
     controlLayout->addWidget(openButton);
     controlLayout->addWidget(playButton);
     controlLayout->addWidget(positionSlider);
+    controlLayout->addWidget(SpeedSlider);
 
     QBoxLayout *layout = new QVBoxLayout;
     layout->addWidget(videoWidget);
@@ -123,4 +129,15 @@ void VideoPlayer::handleError()
 {
     playButton->setEnabled(false);
     errorLabel->setText("Error: " + mediaPlayer.errorString());
+}
+
+void VideoPlayer::setSpeed(int val)
+{
+    double rate = 1;
+    if (val >= 0)
+         rate = (double)val/100 + 1;
+    else
+        rate = 1/(-(double)val/100+1);
+
+    mediaPlayer.setPlaybackRate(rate);
 }
